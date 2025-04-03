@@ -41,7 +41,7 @@ This is a practical tool aimed at helping woodworkers reduce waste, save time in
 
 ## How to Use
 
-1. Simply open `index.html` in your web browser
+1. Simply open `TheFinalCut.html` in your web browser
 2. Use the Carpenter's Calculator on the left to convert measurements
 3. Configure your stock sheet dimensions and blade kerf
 4. Add pieces to your cut list with their dimensions and quantities
