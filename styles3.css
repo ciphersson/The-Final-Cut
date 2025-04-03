@@ -1,0 +1,188 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.stockcake.com/public/e/3/e/e3ecd9f2-d2ce-41b5-b427-4a38f10e05d6/dense-forest-view-stockcake.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    border: none;
+    backdrop-filter: blur(5px);
+}
+
+#layoutCanvas {
+    border: 1px solid #dee2e6;
+    background-color: white;
+    width: 100%;
+    height: 500px;
+}
+
+.table {
+    font-size: 0.9rem;
+}
+
+.btn-remove {
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    padding: 0.5rem 0;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 2rem;
+    color: #ffffff;
+    backdrop-filter: blur(5px);
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+.sawdust {
+    position: absolute;
+    pointer-events: none;
+    width: 5.5px;
+    height: 5.5px;
+    opacity: 0.9;
+    transition: opacity 2s, transform 0.1s;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><linearGradient id="blade" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23E8E8E8"/><stop offset="50%" style="stop-color:%23C0C0C0"/><stop offset="100%" style="stop-color:%23A0A0A0"/></linearGradient></defs><path fill="url(%23blade)" d="M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2zm0 2c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 2c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6zm0 2c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00ff00,
+                     0 0 20px #00ff00,
+                     0 0 30px #00ff00;
+    }
+    50% {
+        text-shadow: 0 0 20px #00ff00,
+                     0 0 30px #00ff00,
+                     0 0 40px #00ff00,
+                     0 0 50px #00ff00;
+    }
+    100% {
+        text-shadow: 0 0 10px #00ff00,
+                     0 0 20px #00ff00,
+                     0 0 30px #00ff00;
+    }
+}
+
+.glow-text {
+    color: #00ff00;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
+    animation: glow 2s ease-in-out infinite;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pink-title {
+    color: #FF1493 !important;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 20, 147, 0.5);
+}
+
+.pink-title:hover {
+    color: #FF69B4 !important;
+    text-shadow: 0 0 8px rgba(255, 20, 147, 0.7);
+}
+
+.ratio-16x9 {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.github-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.github-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.github-cat {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+.github-text {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.github-link:hover {
+    transform: scale(1.1);
+}
+
+.github-link:hover .github-cat {
+    transform: rotate(10deg);
+}
+
+.github-corner,
+.github-ribbon {
+    display: none;
+}
+
+/* Sawdust toggle button */
+#toggleSawdust {
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+#toggleSawdust:hover {
+    transform: scale(1.05);
+}
+
+#toggleSawdust i {
+    margin-right: 5px;
+}

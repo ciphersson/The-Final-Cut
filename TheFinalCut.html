@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Final Cut - Wood Cutting Optimizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <a href="https://github.com/ciphersson/The-Final-Cut" class="github-link" target="_blank" aria-label="Fork me on GitHub">
+        <div class="github-container">
+            <img src="images/github-cat.png" alt="GitHub Cat" class="github-cat">
+            <div class="github-text">Fork Me On Github</div>
+        </div>
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <div class="w-100 d-flex justify-content-between align-items-center">
+                <button id="toggleSawdust" class="btn btn-outline-light btn-sm">
+                    <i class="bi bi-snow"></i> Saw Effect: ON
+                </button>
+                <h1 class="glow-text mb-0">The Final Cut</h1>
+                <div style="width: 150px;"></div> <!-- Spacer to keep title centered -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Carpenter's Calculator -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Carpenter's Calculator</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Feet</label>
+                            <input type="number" id="feet" class="form-control" value="0">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Inches</label>
+                            <input type="number" id="inches" class="form-control" value="0">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fraction</label>
+                            <select id="fraction" class="form-control">
+                                <option value="0">0</option>
+                                <option value="0.125">1/8</option>
+                                <option value="0.25">1/4</option>
+                                <option value="0.375">3/8</option>
+                                <option value="0.5">1/2</option>
+                                <option value="0.625">5/8</option>
+                                <option value="0.75">3/4</option>
+                                <option value="0.875">7/8</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Total (inches)</label>
+                            <input type="number" id="total" class="form-control" readonly>
+                        </div>
+
+                        <!-- Imperial Conversion Chart -->
+                        <div class="mb-3">
+                            <button class="btn btn-secondary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#imperialChart">
+                                <i class="bi bi-chevron-down"></i> Imperial to Decimal Conversion Chart
+                            </button>
+                            <div class="collapse mt-2" id="imperialChart">
+                                <div class="card card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fraction</th>
+                                                    <th>Decimal</th>
+                                                    <th>Fraction</th>
+                                                    <th>Decimal</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>1/16"</td><td>0.0625"</td><td>9/16"</td><td>0.5625"</td></tr>
+                                                <tr><td>1/8"</td><td>0.1250"</td><td>5/8"</td><td>0.6250"</td></tr>
+                                                <tr><td>3/16"</td><td>0.1875"</td><td>11/16"</td><td>0.6875"</td></tr>
+                                                <tr><td>1/4"</td><td>0.2500"</td><td>3/4"</td><td>0.7500"</td></tr>
+                                                <tr><td>5/16"</td><td>0.3125"</td><td>13/16"</td><td>0.8125"</td></tr>
+                                                <tr><td>3/8"</td><td>0.3750"</td><td>7/8"</td><td>0.8750"</td></tr>
+                                                <tr><td>7/16"</td><td>0.4375"</td><td>15/16"</td><td>0.9375"</td></tr>
+                                                <tr><td>1/2"</td><td>0.5000"</td><td>1"</td><td>1.0000"</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Metric Conversion Chart -->
+                        <div class="mb-3">
+                            <button class="btn btn-secondary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#metricChart">
+                                <i class="bi bi-chevron-down"></i> Metric to Decimal Inches Conversion
+                            </button>
+                            <div class="collapse mt-2" id="metricChart">
+                                <div class="card card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Millimeters</th>
+                                                    <th>Inches</th>
+                                                    <th>Millimeters</th>
+                                                    <th>Inches</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>1mm</td><td>0.0394"</td><td>15mm</td><td>0.5906"</td></tr>
+                                                <tr><td>2mm</td><td>0.0787"</td><td>20mm</td><td>0.7874"</td></tr>
+                                                <tr><td>3mm</td><td>0.1181"</td><td>25mm</td><td>0.9843"</td></tr>
+                                                <tr><td>4mm</td><td>0.1575"</td><td>30mm</td><td>1.1811"</td></tr>
+                                                <tr><td>5mm</td><td>0.1969"</td><td>40mm</td><td>1.5748"</td></tr>
+                                                <tr><td>6mm</td><td>0.2362"</td><td>50mm</td><td>1.9685"</td></tr>
+                                                <tr><td>8mm</td><td>0.3150"</td><td>75mm</td><td>2.9528"</td></tr>
+                                                <tr><td>10mm</td><td>0.3937"</td><td>100mm</td><td>3.9370"</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pink Floyd Video -->
+                        <div class="mb-3">
+                            <button class="btn btn-secondary w-100 text-start pink-title" type="button" data-bs-toggle="collapse" data-bs-target="#pinkFloydVideo">
+                                <i class="bi bi-chevron-down"></i> The Final Cut
+                            </button>
+                            <div class="collapse mt-2" id="pinkFloydVideo">
+                                <div class="card card-body">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/qZyXLX7bxDk?si=PBjPFoh90oOY_1r7" 
+                                                title="YouTube video player" 
+                                                frameborder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                referrerpolicy="strict-origin-when-cross-origin" 
+                                                allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cut List Optimizer -->
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Cut List Optimizer</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Sheet Width (inches)</label>
+                                <input type="number" id="sheetWidth" class="form-control" value="48">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Sheet Length (inches)</label>
+                                <input type="number" id="sheetLength" class="form-control" value="96">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Number of Sheets</label>
+                            <input type="number" id="sheetCount" class="form-control" value="1" min="1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Blade Kerf (inches)</label>
+                            <input type="number" id="kerf" class="form-control" value="0.125" step="0.0625">
+                        </div>
+                        <div class="mb-3">
+                            <h6>Cut List</h6>
+                            <table class="table" id="cutList">
+                                <thead>
+                                    <tr>
+                                        <th>Width</th>
+                                        <th>Length</th>
+                                        <th>Quantity</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <button class="btn btn-primary" id="addPiece">Add Piece</button>
+                        </div>
+                        <button class="btn btn-success" id="optimize">Optimize Cuts</button>
+                        <button class="btn btn-info ms-2" id="exportPdf">Export to PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Cutting Layout</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-outline-secondary" id="prevSheet" disabled>Previous Sheet</button>
+                            <button class="btn btn-sm btn-outline-secondary" disabled id="sheetIndicator">Sheet 1 of 1</button>
+                            <button class="btn btn-sm btn-outline-secondary" id="nextSheet" disabled>Next Sheet</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="layoutCanvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        Created by <a href="https://www.facebook.com/ciphers.son" target="_blank">Frank Forrester</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

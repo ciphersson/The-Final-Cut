@@ -1,0 +1,38 @@
+.cut-list-item {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.optimization-sheet {
+    border: 2px solid #333;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.cut-piece {
+    border: 1px solid #666;
+    margin: 2px;
+    padding: 4px;
+    display: inline-block;
+    background-color: #e9ecef;
+}
+
+#optimization-results {
+    min-height: 200px;
+    background-color: #f8f9fa;
+}
+
+.form-control {
+    margin-right: 5px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
